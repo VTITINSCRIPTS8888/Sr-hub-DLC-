@@ -1,0 +1,232 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Criação da janela principal
+local Window = OrionLib:MakeWindow({Name = "Sr hub DLC by xenon", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+-- Notificação ao executar o hub
+OrionLib:MakeNotification({
+    Name = "Hub Executado",
+    Content = "O Hub foi executado com sucesso GG!",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+-- Função para adicionar abas
+local function AddTab(name, icon)
+    return Window:MakeTab({
+        Name = name,
+        Icon = icon,
+        PremiumOnly = false
+    })
+end
+
+-- Função para adicionar botões a uma aba
+local function AddButton(tab, name, callback)
+    tab:AddButton({
+        Name = name,
+        Callback = callback
+    })
+end
+
+-- Criando abas
+local BloxFruitTab = AddTab("Blox Fruit", "rbxassetid://4483345998")
+local SABossHelperTab = AddTab("SA Boss Helper", "rbxassetid://4483345998")
+local FleeTheFacilityTab = AddTab("Flee The Facility", "rbxassetid://4483345998")
+local KingLegacyTab = AddTab("King Legacy", "rbxassetid://4483345998")
+local MM2Tab = AddTab("MM2", "rbxassetid://4483345998")
+local AnimeVanguardsTab = AddTab("Anime Vanguards", "rbxassetid://4483345998")
+local WestBoundTab = AddTab("WestBound", "rbxassetid://4483345998")
+local BrookhavenTab = AddTab("Brookhaven", "rbxassetid://448335998")
+local DragonBallRageTab = AddTab("Dragon Ball Rage", "rbxassetid://4483345998")
+local FreeEmoteTab = AddTab("Free Emote", "rbxassetid://4483345998")
+local DoorsTab = AddTab("Doors", "rbxassetid://4483345998")
+local GhostHubTab = AddTab("Ghost Hub", "rbxassetid://4483345998")
+local SlapBattleTab = AddTab("Slap Battle", "rbxassetid://4483345998")
+local DemonFallTab = AddTab("Demon Fall", "rbxassetid://4483345998")
+local CriadoresTab = AddTab("Criadores", "rbxassetid://4483345998")
+local MiscTab = AddTab("Misc", "rbxassetid://4483345998") -- Nova aba Misc
+
+-- Adicionando botões nas abas
+
+-- Configurações
+local player = game.Players.LocalPlayer -- Referência ao jogador
+local speedIncrement = 10 -- Aumento de velocidade
+local jumpPowerIncrement = 25 -- Aumento de pulo
+
+AddButton(MiscTab, "Aumentar Velocidade", function()
+    player.Character.Humanoid.WalkSpeed = player.Character.Humanoid.WalkSpeed + speedIncrement
+end)
+
+AddButton(MiscTab, "Aumentar Super Pulo", function()
+    player.Character.Humanoid.JumpPower = player.Character.Humanoid.JumpPower + jumpPowerIncrement
+end)
+
+AddButton(MiscTab, "Definir Gravidade para 1", function()
+    workspace.Gravity = 1
+end)
+
+AddButton(MiscTab, "Resetar Velocidade", function()
+    player.Character.Humanoid.WalkSpeed = 16 -- Valor padrão de velocidade
+end)
+
+AddButton(MiscTab, "Resetar Pulo", function()
+    player.Character.Humanoid.JumpPower = 50 -- Valor padrão de pulo
+end)
+
+AddButton(MiscTab, "Resetar Gravidade", function()
+    workspace.Gravity = 196.2 -- Valor padrão de gravidade
+end)
+
+-- Anti-lag e Remover Fogo
+AddButton(MiscTab, "Ativar Anti-Lag", function()
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("Fire") then
+            v:Destroy() -- Remove o objeto de fogo
+        end
+    end
+end)
+
+AddButton(MiscTab, "Iluminar Mapa", function()
+    local Lighting = game:GetService("Lighting")
+    Lighting.Ambient = Color3.new(1, 1, 1) -- Define a cor ambiente como branca
+    Lighting.Brightness = 2 -- Aumenta o brilho
+    Lighting.TimeOfDay = "14:00:00" -- Define a hora do dia para meio-dia (iluminação máxima)
+end)
+
+-- Remover Limite de FPS
+AddButton(MiscTab, "Remover Limite de FPS", function()
+    local RunService = game:GetService("RunService")
+    RunService.Heartbeat:Connect(function()
+        game:GetService("Workspace").Baseplate.ForceField.ForceField.Size = 1000 -- Aumenta o tamanho para remover o limite
+    end)
+end)
+
+-- Botões em outras abas (exemplo)
+AddButton(BloxFruitTab, "Blox Fruit W-Azure", function()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+end)
+AddButton(BloxFruitTab, "Andepzai(Chances of kick", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnDepZaiHubBeta/main/AnDepZaiHubBeta.lua"))()
+end)
+
+AddButton(BloxFruitTab, "Blox Fruit Redz-Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999"))()
+end)
+
+AddButton(BloxFruitTab, "Blox Fruit Cooka-Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/UserDevEthical/Loadstring/main/CokkaHub.lua"))()
+end)
+
+-- Botão na aba SA Boss Helper
+AddButton(SABossHelperTab, "SA Boss Helper", function()
+    -- Primeiro script
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Gabiruvei/Ameno/08142f5310d688772d1f0303a551563184374100/Ameno_Script"))()
+    
+    -- Segundo script
+    loadstring(game:HttpGet("https://pastebin.com/raw/KrajzJdV"))()
+end)
+
+-- Botões em outras abas (exemplo)
+AddButton(FleeTheFacilityTab, "FLee The Facility FTFHAX", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LeviTheOtaku/roblox-scripts/main/FTFHAX.lua"))() 
+    print("Executando script do Flee The Facility...")
+end)
+
+AddButton(KingLegacyTab, "King Legacy Arc-Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ChopLoris/ArcHub/main/main.lua"))()
+    print("Executando script do King Legacy...")
+end)
+
+AddButton(KingLegacyTab, "King Legacy Zee-Hub", function()
+    loadstring(game:HttpGet("https://zuwz.me/Ls-Zee-Hub-KL"))()
+    print("Executando script do King Legacy...")
+end)
+
+AddButton(MM2Tab, "MM2 Yarhm", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua"))()
+    print("Executando script do Murder Mystery 2...")
+end)
+
+AddButton(MM2Tab, "MM2 XHUB", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2"))()
+    print("Executando script do Murder Mystery 2...")
+end)
+
+AddButton(AnimeVanguardsTab, "Anime Vanguards Ahmadv99", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Anime%20Vanguards.lua"))()
+    print("Executando script do Anime Vanguards...")
+end)
+
+AddButton(WestBoundTab, "WestBound Elixir Client", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Srmagnata99/Westbound/refs/heads/main/Westbound%20Elixir%20Client"))()
+    print("Executando script do WestBound...")
+end)
+
+AddButton(DragonBallRageTab, "Dragon Ball Rage Xpa1n", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xpa1n/Scripts/main/DBR.lua"))()
+    print("Executando script do Dragon Ball Rage...")
+end)
+
+AddButton(FreeEmoteTab, "Free Emote System Broken", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))()
+    print("Executando script do Free Emote...")
+end)
+
+AddButton(DoorsTab, "Doors Exolution", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ExolutionProject/Scripts/main/ExolutionPremiumHub.lua"))()
+    print("Executando script do Doors...")
+end)
+
+AddButton(GhostHubTab, "Ghost Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub"))()
+    print("Executando script do Ghost Hub...")
+end)
+
+AddButton(SlapBattleTab, "Slap Battle", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
+    print("Executando script do Slap Battle...")
+end)
+
+AddButton(DemonFallTab, "Demon Fall Dupe|Farm Lynch", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LynchHHU/AF-ScriptHub/main/Protected_8448829756613131.txt"))()
+    print("Executando script do Demon Fall...")
+end)
+
+AddButton(DemonFallTab, "Demon Fall Farm Labib (Need Key)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LabibKazi858/Scripts/main/DemonFall"))()
+    print("Executando script do Demon Fall...")
+end)
+
+AddButton(BrookhavenTab, "Imperial hub", function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Trev0rZ/LoaderM/main/ImperialHub-Working.lua"),true))()
+       print("Executando script do Brookhaven...")
+end)
+
+AddButton(BrookhavenTab, "Redz hub", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/REDzHUB"))()
+        print("Executando Redz hub....")
+end)
+
+-- Botão na aba Criadores
+AddButton(CriadoresTab, "Click Para Mostrar Criadores/Desenvolvedores", function()
+    OrionLib:MakeNotification({
+        Name = "Criadores",
+        Content = "Dono: The_XSethX\nDesenvolvedor: The_XSethX Sor_UmPlayer",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end)
+
+-- Botão Discord na aba Criadores
+AddButton(CriadoresTab, "Discord", function()
+    setclipboard("https://discord.gg/pUp2QAxNxv") -- Substitua "seu_link_aqui" pelo seu link do Discord
+    OrionLib:MakeNotification({
+        Name = "Discord Copiado",
+        Content = "Mod por xenonKKJ",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end)
+-- Finalizando a inicialização da janela
+OrionLib:Init()
