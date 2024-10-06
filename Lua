@@ -33,6 +33,7 @@ local BloxFruitTab = AddTab("Blox Fruit", "rbxassetid://4483345998")
 local SABossHelperTab = AddTab("SA Boss Helper", "rbxassetid://4483345998")
 local FleeTheFacilityTab = AddTab("Flee The Facility", "rbxassetid://4483345998")
 local KingLegacyTab = AddTab("King Legacy", "rbxassetid://4483345998")
+local OtherHubTab = AddTab("Other Hub", "rbxassetid://443345998")
 local MM2Tab = AddTab("MM2", "rbxassetid://4483345998")
 local AnimeVanguardsTab = AddTab("Anime Vanguards", "rbxassetid://4483345998")
 local WestBoundTab = AddTab("WestBound", "rbxassetid://4483345998")
@@ -60,6 +61,10 @@ end)
 
 AddButton(MiscTab, "Aumentar Super Pulo", function()
     player.Character.Humanoid.JumpPower = player.Character.Humanoid.JumpPower + jumpPowerIncrement
+end)
+AddButton(OtherHubTab, "🔐Executar outro hub", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/leenZzZzZ/ScriptHUB/main/Script%20Hub",true))();
+     print("Executando...")
 end)
 
 AddButton(MiscTab, "Definir Gravidade para 1", function()
@@ -155,8 +160,6 @@ AddButton(MM2Tab, "MM2 XHUB", function()
 end)
 AddButton(BypassChatTab, "Bypass chat", function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Chat-Bypass-10545"))()
-      print("Ativando Bypass....")
-end)
 
 AddButton(AnimeVanguardsTab, "Anime Vanguards Ahmadv99", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Anime%20Vanguards.lua"))()
